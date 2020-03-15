@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Operations Version="1.0" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+  <Operation Name="Rename Refactor" Key="bd7c0f2a-d716-47e0-a0ef-c976092dbd13" ChangeDateTime="03/12/2020 15:38:34">
+    <Property Name="ElementName" Value="[dbo].[TestCategories].[Name]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[TestCategories]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Name1" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="6275c685-dba8-4c6e-a6b7-ce903d7f1986" ChangeDateTime="03/12/2020 15:55:00">
+    <Property Name="ElementName" Value="[dbo].[TestCategories].[Name1]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[TestCategories]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="NameOfCategory" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="b003f89a-464a-4129-8f96-192f323fd18e" ChangeDateTime="03/12/2020 15:58:48">
+    <Property Name="ElementName" Value="[dbo].[TestCategories].[NameOfCategory]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[TestCategories]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Name" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="a33d95e7-3348-4fa7-ad7a-24342062c0cb" ChangeDateTime="03/12/2020 15:59:09">
+    <Property Name="ElementName" Value="[dbo].[TestCategories].[Name]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[TestCategories]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="[NameOfCategory]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="a0bcdd71-3b06-487b-a12f-9aa846b54324" ChangeDateTime="03/12/2020 16:09:21">
+    <Property Name="ElementName" Value="[dbo].[TestCategories].[NameOfCategory]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[TestCategories]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="[Name]" />
+  </Operation>
+</Operations>

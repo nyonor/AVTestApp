@@ -1,0 +1,220 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="AVTestApp.Data.Models.EF.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'master.dbo.TestCategories' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="TestCategories">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NameOfCategory" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'master.dbo.TestOrderProducts' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="TestOrderProducts">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="OrderId" Type="int" />
+          <Property Name="ProductId" Type="int" />
+          <Property Name="Quantity" Type="int" />
+          <Property Name="Price" Type="money" />
+          <Property Name="Total" Type="money" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'master.dbo.TestOrders' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="TestOrders">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FirstName" Type="varchar" MaxLength="255" />
+          <Property Name="LastName" Type="varchar" MaxLength="255" />
+          <Property Name="Address" Type="varchar" MaxLength="255" />
+          <Property Name="City" Type="varchar" MaxLength="255" />
+          <Property Name="State" Type="varchar" MaxLength="255" />
+          <Property Name="Country" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'master.dbo.TestProductCategories' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="TestProductCategories">
+          <Property Name="ProductId" Type="int" />
+          <Property Name="CategoryId" Type="int" />
+        </EntityType>-->
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'master.dbo.TestProducts' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="TestProducts">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="255" />
+          <Property Name="SKU" Type="varchar" MaxLength="255" />
+          <Property Name="Description" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityContainer Name="AVTestAppDataModelsEFStoreContainer">
+          <EntitySet Name="TestCategories" EntityType="Self.TestCategories" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [TestCategories].[id] AS [id], 
+    [TestCategories].[NameOfCategory] AS [NameOfCategory]
+    FROM [dbo].[TestCategories] AS [TestCategories]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="TestOrderProducts" EntityType="Self.TestOrderProducts" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [TestOrderProducts].[id] AS [id], 
+    [TestOrderProducts].[OrderId] AS [OrderId], 
+    [TestOrderProducts].[ProductId] AS [ProductId], 
+    [TestOrderProducts].[Quantity] AS [Quantity], 
+    [TestOrderProducts].[Price] AS [Price], 
+    [TestOrderProducts].[Total] AS [Total]
+    FROM [dbo].[TestOrderProducts] AS [TestOrderProducts]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="TestOrders" EntityType="Self.TestOrders" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [TestOrders].[id] AS [id], 
+    [TestOrders].[FirstName] AS [FirstName], 
+    [TestOrders].[LastName] AS [LastName], 
+    [TestOrders].[Address] AS [Address], 
+    [TestOrders].[City] AS [City], 
+    [TestOrders].[State] AS [State], 
+    [TestOrders].[Country] AS [Country]
+    FROM [dbo].[TestOrders] AS [TestOrders]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="TestProducts" EntityType="Self.TestProducts" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [TestProducts].[id] AS [id], 
+    [TestProducts].[Name] AS [Name], 
+    [TestProducts].[SKU] AS [SKU], 
+    [TestProducts].[Description] AS [Description]
+    FROM [dbo].[TestProducts] AS [TestProducts]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="AVTestApp.Data.Models.EF" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="TestCategory">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NameOfCategory" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TestOrderProduct">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OrderId" Type="Int32" />
+          <Property Name="ProductId" Type="Int32" />
+          <Property Name="Quantity" Type="Int32" />
+          <Property Name="Price" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Total" Type="Decimal" Precision="19" Scale="4" />
+        </EntityType>
+        <EntityType Name="TestOrder">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="LastName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Address" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="City" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="State" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Country" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TestProduct">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="SKU" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="AVTestAppEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="TestCategories" EntityType="Self.TestCategory" />
+          <EntitySet Name="TestOrderProducts" EntityType="Self.TestOrderProduct" />
+          <EntitySet Name="TestOrders" EntityType="Self.TestOrder" />
+          <EntitySet Name="TestProducts" EntityType="Self.TestProduct" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="AVTestAppDataModelsEFStoreContainer" CdmEntityContainer="AVTestAppEntities">
+          <EntitySetMapping Name="TestCategories">
+            <EntityTypeMapping TypeName="AVTestApp.Data.Models.EF.TestCategory">
+              <MappingFragment StoreEntitySet="TestCategories">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="NameOfCategory" ColumnName="NameOfCategory" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TestOrderProducts">
+            <EntityTypeMapping TypeName="AVTestApp.Data.Models.EF.TestOrderProduct">
+              <MappingFragment StoreEntitySet="TestOrderProducts">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Total" ColumnName="Total" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TestOrders">
+            <EntityTypeMapping TypeName="AVTestApp.Data.Models.EF.TestOrder">
+              <MappingFragment StoreEntitySet="TestOrders">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TestProducts">
+            <EntityTypeMapping TypeName="AVTestApp.Data.Models.EF.TestProduct">
+              <MappingFragment StoreEntitySet="TestProducts">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="SKU" ColumnName="SKU" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
