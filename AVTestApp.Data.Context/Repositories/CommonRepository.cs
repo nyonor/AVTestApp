@@ -16,7 +16,7 @@ namespace AVTestApp.Data.Model.Repositories
             dbSet = dbContext.Set<TEntity>();
         }
 
-        public IQueryable<TEntity> All => dbSet.AsQueryable();
+        public IQueryable<TEntity> Entities => dbSet.AsQueryable();
 
         public void Add(TEntity entity)
         {

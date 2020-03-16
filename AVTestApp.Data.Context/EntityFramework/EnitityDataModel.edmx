@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="AVTestApp.Data.Models.EF.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="AVTestApp.Data.Models.EF.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <!--Errors Found During Generation:
 warning 6002: The table/view 'master.dbo.TestCategories' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="TestCategories">
@@ -95,11 +95,16 @@ warning 6002: The table/view 'master.dbo.TestProducts' does not have a primary k
     FROM [dbo].[TestProducts] AS [TestProducts]</DefiningQuery>
           </EntitySet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="AVTestApp.Data.Models.EF" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="AVTestAppEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="TestCategories" EntityType="AVTestApp.Data.Models.EF.TestCategory" />
+          <EntitySet Name="TestOrderProducts" EntityType="AVTestApp.Data.Models.EF.TestOrderProduct" />
+          <EntitySet Name="TestOrders" EntityType="AVTestApp.Data.Models.EF.TestOrder" />
+          <EntitySet Name="TestProducts" EntityType="AVTestApp.Data.Models.EF.TestProduct" />
+        </EntityContainer>
         <EntityType Name="TestCategory">
           <Key>
             <PropertyRef Name="id" />
@@ -139,12 +144,6 @@ warning 6002: The table/view 'master.dbo.TestProducts' does not have a primary k
           <Property Name="SKU" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
         </EntityType>
-        <EntityContainer Name="AVTestAppEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="TestCategories" EntityType="Self.TestCategory" />
-          <EntitySet Name="TestOrderProducts" EntityType="Self.TestOrderProduct" />
-          <EntitySet Name="TestOrders" EntityType="Self.TestOrder" />
-          <EntitySet Name="TestProducts" EntityType="Self.TestProduct" />
-        </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -154,43 +153,43 @@ warning 6002: The table/view 'master.dbo.TestProducts' does not have a primary k
           <EntitySetMapping Name="TestCategories">
             <EntityTypeMapping TypeName="AVTestApp.Data.Models.EF.TestCategory">
               <MappingFragment StoreEntitySet="TestCategories">
-                <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="NameOfCategory" ColumnName="NameOfCategory" />
+                <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="TestOrderProducts">
             <EntityTypeMapping TypeName="AVTestApp.Data.Models.EF.TestOrderProduct">
               <MappingFragment StoreEntitySet="TestOrderProducts">
-                <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="OrderId" ColumnName="OrderId" />
-                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
-                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
-                <ScalarProperty Name="Price" ColumnName="Price" />
                 <ScalarProperty Name="Total" ColumnName="Total" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+                <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+                <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="TestOrders">
             <EntityTypeMapping TypeName="AVTestApp.Data.Models.EF.TestOrder">
               <MappingFragment StoreEntitySet="TestOrders">
-                <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
-                <ScalarProperty Name="LastName" ColumnName="LastName" />
-                <ScalarProperty Name="Address" ColumnName="Address" />
-                <ScalarProperty Name="City" ColumnName="City" />
-                <ScalarProperty Name="State" ColumnName="State" />
                 <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="TestProducts">
             <EntityTypeMapping TypeName="AVTestApp.Data.Models.EF.TestProduct">
               <MappingFragment StoreEntitySet="TestProducts">
-                <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="SKU" ColumnName="SKU" />
                 <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="SKU" ColumnName="SKU" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

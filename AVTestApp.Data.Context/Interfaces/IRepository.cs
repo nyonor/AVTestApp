@@ -11,7 +11,7 @@ namespace AVTestApp.Data.Model.Interfaces
         /// <summary>
         /// Get all entities
         /// </summary>
-        IQueryable<TEntity> All { get; }
+        IQueryable<TEntity> Entities { get; }
 
         /// <summary>
         /// Remove entity

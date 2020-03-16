@@ -5,10 +5,10 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="d93cb5743dac4bf88393fb58d5420bc6" Name="Diagram1">
-        <EntityTypeShape EntityType="AVTestApp.Data.Models.EF.TestCategory" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="AVTestApp.Data.Models.EF.TestOrderProduct" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="AVTestApp.Data.Models.EF.TestOrder" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="AVTestApp.Data.Models.EF.TestProduct" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AVTestApp.Data.Models.EF.TestCategory" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="AVTestApp.Data.Models.EF.TestOrderProduct" Width="1.5" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="AVTestApp.Data.Models.EF.TestOrder" Width="1.5" PointX="0.75" PointY="3.75" />
+        <EntityTypeShape EntityType="AVTestApp.Data.Models.EF.TestProduct" Width="1.5" PointX="2.75" PointY="3.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

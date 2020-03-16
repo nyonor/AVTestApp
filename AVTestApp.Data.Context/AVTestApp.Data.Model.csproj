@@ -50,6 +50,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AVTestAppDbContext.cs" />
     <Compile Include="EntityFramework\EnitityDataModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -79,9 +80,12 @@
     </Compile>
     <Compile Include="Interfaces\IDbContext.cs" />
     <Compile Include="Interfaces\IRepository.cs" />
+    <Compile Include="Interfaces\IRepositoryFactory.cs" />
     <Compile Include="Interfaces\IUnitOfWork.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\CommonRepository.cs" />
+    <Compile Include="Repositories\RepositoryFactory.cs" />
+    <Compile Include="UnitOfWork.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Config" />
