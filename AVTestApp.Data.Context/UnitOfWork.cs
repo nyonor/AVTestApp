@@ -32,7 +32,7 @@ namespace AVTestApp.Data.Context
 
         public void Dispose()
         {
-            throw new NotImplementedException();
+            _dbContext.Dispose();
         }
 
         public void Reject()

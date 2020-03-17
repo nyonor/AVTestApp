@@ -14,6 +14,6 @@ namespace AVTestApp.Business.Model.Services.Interfaces
         /// Get list of orders ready for groupping for shipment
         /// </summary>
         /// <returns></returns>
-        IList<TestOrder> ForShipment();
+        IList<OrderDTO> ForShipment();
     }
 }

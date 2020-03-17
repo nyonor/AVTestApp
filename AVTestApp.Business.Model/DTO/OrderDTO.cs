@@ -8,5 +8,6 @@ namespace AVTestApp.Business.Model.DTO
 {
     public class OrderDTO
     {
+        public int Id { get; set; }
     }
 }

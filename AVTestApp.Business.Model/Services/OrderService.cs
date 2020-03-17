@@ -1,4 +1,5 @@
-﻿using AVTestApp.Business.Model.Services.Interfaces;
+﻿using AVTestApp.Business.Model.DTO;
+using AVTestApp.Business.Model.Services.Interfaces;
 using AVTestApp.Data.Context;
 using AVTestApp.Data.Context.EntityFramework;
 using AVTestApp.Data.Model.Interfaces;
@@ -12,16 +13,16 @@ namespace AVTestApp.Business.Model.Services
 {
     public class OrderService : IOrderService
     {
-        private UnitOfWork _uow;
+        private IUnitOfWork _uow;
 
-        public OrderService(UnitOfWork uow)
+        public OrderService(IUnitOfWork uow)
         {
             _uow = uow;
         }
 
-        public IList<TestOrder> ForShipment()
+        IList<OrderDTO> IOrderService.ForShipment()
         {
-            return _uow.TestOrdersRepository.Entities.ToList();
+            return _uow.TestOrdersRepository.Entities.Select(e => new OrderDTO() { Id = e.id }).ToList();
         }
     }
 }

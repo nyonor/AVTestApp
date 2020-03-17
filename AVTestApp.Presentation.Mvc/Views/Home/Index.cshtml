@@ -9,6 +9,15 @@
 </div>
 
 <div class="row">
+    @foreach(AVTestApp.Business.Model.DTO.OrderDTO order in ViewBag.Orders)
+    {
+        <div class="col">
+            @order.Id
+        </div>
+    }
+</div>
+
+<div class="row">
     <div class="col-md-4">
         <h2>Getting started</h2>
         <p>

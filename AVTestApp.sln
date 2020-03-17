@@ -23,6 +23,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AVTestApp.Presentation.Mvc"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AVTestApp.Business.Model", "AVTestApp.Business.Model\AVTestApp.Business.Model.csproj", "{FB668235-230D-4240-8F27-7F79E731C9E6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AVTestApp.Infrastructure.IoC", "AVTestApp.Infrastructure.IoC\AVTestApp.Infrastructure.IoC.csproj", "{6A6DEF62-E24E-48C8-AEA7-C5D85688AA49}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{FB668235-230D-4240-8F27-7F79E731C9E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FB668235-230D-4240-8F27-7F79E731C9E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FB668235-230D-4240-8F27-7F79E731C9E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A6DEF62-E24E-48C8-AEA7-C5D85688AA49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A6DEF62-E24E-48C8-AEA7-C5D85688AA49}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A6DEF62-E24E-48C8-AEA7-C5D85688AA49}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A6DEF62-E24E-48C8-AEA7-C5D85688AA49}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -61,6 +67,7 @@ Global
 		{EBF207F7-3E5E-45CD-8FE3-7F481B92A726} = {51426A17-3596-4446-88A3-03C2CAA91A1A}
 		{5A8B4161-BA30-46B0-A67F-014029C30A06} = {F4A73551-8D98-44F6-80DC-137643B9AEAF}
 		{FB668235-230D-4240-8F27-7F79E731C9E6} = {19212DAA-6CBA-4F26-9C02-1156584F9018}
+		{6A6DEF62-E24E-48C8-AEA7-C5D85688AA49} = {99471747-AB4C-4C19-9E6D-90EE9E3A8D52}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {85A720A9-BB83-46C5-AE2C-426925F437E9}

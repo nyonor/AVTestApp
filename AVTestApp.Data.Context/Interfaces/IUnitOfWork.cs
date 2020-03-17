@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AVTestApp.Data.Context.EntityFramework;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,10 @@ namespace AVTestApp.Data.Model.Interfaces
 {
     public interface IUnitOfWork : IDisposable
     {
+        IRepository<TestCategory> TestCategoryRepository { get; }
+        IRepository<TestOrderProduct> TestOrderProductsRepository { get; }
+        IRepository<TestOrder> TestOrdersRepository { get; }
+
         /// <summary>
         /// Commit changes
         /// </summary>
