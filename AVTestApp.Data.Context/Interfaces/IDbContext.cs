@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace AVTestApp.Data.Model.Interfaces
 {
-    public interface IDbContext : IDisposable
+    public interface IDbContext
     {
         /// <summary>
         /// Get DbSet

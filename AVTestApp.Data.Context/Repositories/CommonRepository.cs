@@ -23,6 +23,11 @@ namespace AVTestApp.Data.Model.Repositories
             dbSet.Add(entity);
         }
 
+        //public void Dispose()
+        //{
+        //    dbContext.Dispose();
+        //}
+
         public void Remove(TEntity entity)
         {
             dbSet.Remove(entity);

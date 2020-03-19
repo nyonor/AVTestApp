@@ -20,6 +20,11 @@ namespace AVTestApp.Business.Model.Services
             _uow = uow;
         }
 
+        //public void Dispose()
+        //{
+        //    _uow.Dispose();
+        //}
+
         IList<OrderDTO> IOrderService.ForShipment()
         {
             return _uow.TestOrdersRepository.Entities.Select(e => new OrderDTO() { Id = e.id }).ToList();

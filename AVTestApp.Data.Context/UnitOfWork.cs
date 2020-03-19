@@ -30,14 +30,16 @@ namespace AVTestApp.Data.Context
             throw new NotImplementedException();
         }
 
-        public void Dispose()
-        {
-            _dbContext.Dispose();
-        }
-
         public void Reject()
         {
             throw new NotImplementedException();
         }
+
+        //public void Dispose()
+        //{
+        //    TestCategoryRepository.Dispose();
+        //    TestOrderProductsRepository.Dispose();
+        //    TestOrdersRepository.Dispose();
+        //}
     }
 }

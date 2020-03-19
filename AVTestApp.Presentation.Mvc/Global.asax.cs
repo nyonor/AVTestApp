@@ -1,5 +1,6 @@
 ﻿using Autofac;
 using Autofac.Integration.Mvc;
+using AutoMapper.Contrib.Autofac.DependencyInjection;
 using AVTestApp.Infrastructure.IoC;
 using System;
 using System.Collections.Generic;
@@ -21,6 +22,7 @@ namespace AVTestApp.Presentation.Mvc
 
             builder.RegisterModule(new BLLIoCModule());
             builder.RegisterModule(new DALIoCModule());
+            builder.AddAutoMapper(typeof(MvcApplication).Assembly);
 
             // MVC setup
 

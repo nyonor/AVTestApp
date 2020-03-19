@@ -17,10 +17,10 @@ namespace AVTestApp.Data.Context
             _efDbContext = efDbContext;
         }
 
-        public void Dispose()
-        {
-            _efDbContext.Dispose();
-        }
+        //public void Dispose()
+        //{
+        //    _efDbContext.Dispose();
+        //}
 
         public int SaveChanges()
         {

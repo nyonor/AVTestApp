@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace AVTestApp.Data.Model.Interfaces
 {
-    public interface IUnitOfWork : IDisposable
+    public interface IUnitOfWork
     {
         IRepository<TestCategory> TestCategoryRepository { get; }
         IRepository<TestOrderProduct> TestOrderProductsRepository { get; }
